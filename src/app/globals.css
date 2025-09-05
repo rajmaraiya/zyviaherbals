@@ -1,19 +1,152 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
 
-/* CSS fallback import (only needed if next/font blocked); keep commented
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Montserrat:wght@500;600&display=swap");
+@custom-variant dark (&:is(.dark *));
+
+/* Updated to luxury red and amber color scheme per design brief */
 :root {
-  --font-inter: "Inter", system-ui, sans-serif;
-  --font-montserrat: "Montserrat", system-ui, sans-serif;
-  --font-playfair: "Playfair Display", serif;
+  /* Luxury color palette for international appeal */
+  --background: #ffffff; /* Clean white background */
+  --foreground: #374151; /* Deep elegant text */
+  --card: #fef2f2; /* Soft background for product displays */
+  --card-foreground: #374151; /* Text on cards */
+  --popover: #ffffff; /* Popover background */
+  --popover-foreground: #374151; /* Text in popovers */
+  --primary: #dc2626; /* Luxury red for CTAs */
+  --primary-foreground: #ffffff; /* White text on red */
+  --secondary: #f59e0b; /* Warm amber accent */
+  --secondary-foreground: #ffffff; /* White text on amber */
+  --muted: #fef2f2; /* Muted section backgrounds */
+  --muted-foreground: #374151; /* Text in muted sections */
+  --accent: #f59e0b; /* Amber for highlighting luxury features */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #dc2626; /* Red for errors */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #e5e7eb; /* Subtle borders */
+  --input: #ffffff; /* Input backgrounds */
+  --ring: #f59e0b; /* Amber focus rings */
+  --chart-1: #dc2626;
+  --chart-2: #f59e0b;
+  --chart-3: #374151;
+  --chart-4: #fef2f2;
+  --chart-5: #ffffff;
+  --radius: 0.5rem; /* Refined corner rounding */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #374151;
+  --sidebar-primary: #fef2f2;
+  --sidebar-primary-foreground: #374151;
+  --sidebar-accent: #f59e0b;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #f59e0b;
 }
-*/
 
-:root {
-  --hero-grad: radial-gradient(1200px 600px at 80% -100%, rgba(212,175,55,0.25), transparent 65%),
-               radial-gradient(900px 400px at -20% 120%, rgba(229,199,107,0.15), transparent 60%);
+.dark {
+  --background: #1f2937; /* Dark elegant background */
+  --foreground: #f9fafb; /* Light text in dark mode */
+  --card: #374151;
+  --card-foreground: #f9fafb;
+  --popover: #374151;
+  --popover-foreground: #f9fafb;
+  --primary: #ef4444; /* Brighter red for dark mode */
+  --primary-foreground: #ffffff;
+  --secondary: #fbbf24; /* Brighter amber for dark mode */
+  --secondary-foreground: #1f2937;
+  --muted: #374151;
+  --muted-foreground: #d1d5db;
+  --accent: #fbbf24;
+  --accent-foreground: #1f2937;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #4b5563;
+  --input: #374151;
+  --ring: #fbbf24;
+  --sidebar: #1f2937;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #374151;
+  --sidebar-primary-foreground: #f9fafb;
+  --sidebar-accent: #fbbf24;
+  --sidebar-accent-foreground: #1f2937;
+  --sidebar-border: #4b5563;
+  --sidebar-ring: #fbbf24;
 }
 
-* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+@theme inline {
+  /* Typography configuration */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair-display);
+  --font-mono: var(--font-geist-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom typography classes for luxury branding */
+  .font-display {
+    font-family: var(--font-playfair-display);
+  }
+}
+
+/* Added luxury-focused utility classes */
+@layer utilities {
+  .text-luxury-red {
+    color: var(--primary);
+  }
+  .text-luxury-amber {
+    color: var(--accent);
+  }
+  .bg-luxury-red {
+    background-color: var(--primary);
+  }
+  .bg-luxury-amber {
+    background-color: var(--accent);
+  }
+  .border-luxury-amber {
+    border-color: var(--accent);
+  }
+  .ring-luxury-amber {
+    --tw-ring-color: var(--accent);
+  }
+}

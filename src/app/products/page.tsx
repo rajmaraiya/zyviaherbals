@@ -1,68 +1,63 @@
-import Image from "next/image";
-import Link from "next/link";
-import { prisma } from "@/lib/db";
+import { Container } from "@/components/ui/Container"
+import { ProductCard } from "@/components/shop/ProductCard"
+import { Breadcrumbs } from "@/components/common/Breadcrumbs"
+import { Header } from "@/components/layout/Header"
+import { Footer } from "@/components/layout/Footer"
+import { products } from "@/data/products"
+import type { Metadata } from "next"
 
-export const dynamic = "force-static";
+export const metadata: Metadata = {
+  title: "Premium Ayurvedic Supplements | Zyvia Herbals",
+  description:
+    "Discover our complete collection of premium Himalayan Shilajit and Ayurvedic supplements. Lab-tested, organic, and sourced from the pristine Himalayas.",
+  openGraph: {
+    title: "Premium Ayurvedic Supplements | Zyvia Herbals",
+    description:
+      "Discover our complete collection of premium Himalayan Shilajit and Ayurvedic supplements. Lab-tested, organic, and sourced from the pristine Himalayas.",
+  },
+}
 
-export default async function ProductsPage({
-  searchParams,
-}: {
-  searchParams: { benefit?: string; q?: string; price?: string };
-}) {
-  const { benefit, q } = searchParams;
-
-  const products = await prisma.product.findMany({
-    where: {
-      AND: [
-        q
-          ? {
-              OR: [
-                { title: { contains: q, mode: "insensitive" } },
-                { description: { contains: q, mode: "insensitive" } },
-              ],
-            }
-          : {},
-        benefit ? { benefits: { has: benefit } } : {},
-      ],
-    },
-    include: { images: { orderBy: { priority: "asc" } } },
-    orderBy: [{ featured: "desc" }, { createdAt: "desc" }],
-  });
+export default function ProductsPage() {
+  const breadcrumbItems = [{ label: "Home", href: "/" }, { label: "Products" }]
 
   return (
-    <div className="container py-16">
-      <h1 className="font-display text-3xl md:text-4xl">All Products</h1>
-      <form className="mt-6 flex gap-2 max-w-xl">
-        <input name="q" placeholder="Search..." className="flex-1 rounded-2xl border border-ink/10 bg-cream px-4 py-3" defaultValue={q ?? ""} />
-        <select name="benefit" defaultValue={benefit ?? ""} className="rounded-2xl border border-ink/10 bg-white px-4 py-3">
-          <option value="">All benefits</option>
-          <option value="Energy">Energy</option>
-          <option value="Cognitive">Cognitive</option>
-          <option value="Gut">Gut</option>
-          <option value="Immunity">Immunity</option>
-        </select>
-        <button className="rounded-2xl bg-ink text-cream px-5">Filter</button>
-      </form>
+    <>
+      <Header />
+      <main className="bg-zyvia-cream min-h-screen">
+        <Container>
+          <div className="py-8">
+            <Breadcrumbs items={breadcrumbItems} />
+          </div>
 
-      <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((p) => {
-          const img = p.images[0]?.url ?? "/products/zyvia-shilajit-gummies.png";
-          return (
-            <Link key={p.id} href={`/product/${p.slug}`} className="group rounded-card bg-white border border-ink/5 shadow-ambient p-4">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                <Image src={img} alt={p.title} fill className="object-contain transition duration-base ease-elegant group-hover:scale-[1.02]" />
-              </div>
-              <div className="mt-4 flex items-center justify-between">
-                <div>
-                  <h3 className="font-semibold">{p.title}</h3>
-                  <p className="text-ink/70 text-sm">${p.price.toString()}</p>
-                </div>
-                <div className="text-ink/60 text-xs">View →</div>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
-    </div>
-  );
+          <div className="pb-24">
+            {/* Page Header */}
+            <div className="text-center mb-16">
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-zyvia-coffee mb-4">
+                Premium Ayurvedic Supplements
+              </h1>
+              <p className="text-lg text-zyvia-coffee/70 max-w-3xl mx-auto leading-relaxed">
+                Discover our complete collection of premium Himalayan Shilajit and time-tested Ayurvedic supplements,
+                each rigorously tested for purity and potency to support your wellness journey.
+              </p>
+            </div>
+
+            {/* Products Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+
+            {/* Pagination placeholder */}
+            <div className="mt-16 text-center">
+              <p className="text-zyvia-coffee/60">
+                Showing {products.length} of {products.length} products
+              </p>
+            </div>
+          </div>
+        </Container>
+      </main>
+      <Footer />
+    </>
+  )
 }

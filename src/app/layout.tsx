@@ -1,35 +1,55 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Inter, Montserrat, Playfair_Display } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { Toaster } from "react-hot-toast";          // ✅ add: toast provider
-import { CartProvider } from "@/lib/cart";
+import type React from "react"
+import type { Metadata } from "next"
+import { Playfair_Display, Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react"
+import "./globals.css"
 
-// Fonts (keep your design tokens + swap)
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", display: "swap" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", display: "swap" });
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair-display",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
 
 export const metadata: Metadata = {
-  title: "Zyvia Herbals — Modern Ayurvedic Luxury",
-  description: "Ultra-premium nutraceuticals for modern living. Black & gold elegance with calm confidence.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-};
+  title: "Zyvia Herbals - Premium Ayurvedic Supplements",
+  description:
+    "Discover premium Himalayan Shilajit and Ayurvedic supplements where ancient wisdom meets modern science.",
+  generator: "Next.js",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  openGraph: {
+    title: "Zyvia Herbals - Premium Ayurvedic Supplements",
+    description:
+      "Discover premium Himalayan Shilajit and Ayurvedic supplements where ancient wisdom meets modern science.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zyvia Herbals - Premium Ayurvedic Supplements",
+    description:
+      "Discover premium Himalayan Shilajit and Ayurvedic supplements where ancient wisdom meets modern science.",
+  },
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable} ${playfair.variable}`}>
-      <body className="bg-cream text-ink font-ui antialiased">
-        <CartProvider>
+    <html lang="en">
+      <body className={`font-sans ${inter.variable} ${playfairDisplay.variable} antialiased`}>
+        <Suspense fallback={<div>Loading...</div>}>
           {children}
-        </CartProvider>
-
-        {/* Toasts for UI feedback (newsletter, cart, etc.) */}
-        <Toaster position="top-center" />
-
-        {/* Vercel Analytics */}
-        <Analytics />
+          <Analytics />
+        </Suspense>
       </body>
     </html>
-  );
+  )
 }
