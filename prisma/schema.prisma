@@ -4,8 +4,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite" // SQLite in dev
-  url      = env("DATABASE_URL") // e.g., file:./dev.db
+  provider = "postgresql" // PostgreSQL for production (Neon)
+  url      = env("DATABASE_URL")
+  // For development with SQLite: provider = "sqlite"
 }
 
 /**

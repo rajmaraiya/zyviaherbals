@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import SessionProvider from "@/components/providers/SessionProvider"
+import { Toaster } from "sonner"
 import "./globals.css"
 
 const playfairDisplay = Playfair_Display({
@@ -45,10 +47,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable} ${playfairDisplay.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>
-          {children}
-          <Analytics />
-        </Suspense>
+        <SessionProvider session={null}>
+          <Suspense fallback={<div>Loading...</div>}>
+            {children}
+            <Analytics />
+          </Suspense>
+          <Toaster position="top-center" richColors />
+        </SessionProvider>
       </body>
     </html>
   )
