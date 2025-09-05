@@ -223,7 +223,7 @@ export default function AccountPageClient() {
                     <CardDescription>
                       Customize your account settings and notifications
                     </CardDescription>
-                  </CardContent>
+                  </CardHeader>
                   <CardContent className="space-y-6">
                     <div>
                       <h3 className="font-medium text-zyvia-coffee mb-4">Notifications</h3>
