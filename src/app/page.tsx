@@ -36,6 +36,11 @@ export default function HomePage() {
           <Container className="relative z-10">
             <div className="py-24 lg:py-32">
               <div className="max-w-4xl mx-auto text-center">
+                {/* Deployment Verification Badge */}
+                <div className="inline-block bg-green-500 text-white px-6 py-3 rounded-full text-lg font-bold mb-8 shadow-lg animate-pulse">
+                  🚀 NEW SITE LIVE - Updated Jan 5, 2025 🚀
+                </div>
+                
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
                   Where Ancient Ayurveda
                   <span className="block text-amber-400">Meets Modern Science</span>
