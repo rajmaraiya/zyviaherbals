@@ -21,7 +21,7 @@ export const products: Product[] = [
   {
     id: "1",
     name: "Premium Shilajit Honey Sticks",
-    subtitle: "Pure Himalayan Shilajit in Raw Honey - 15 Sticks",
+    subtitle: "Pure Himalayan Shilajit in Raw Honey - 30 Sticks",
     slug: "shilajit-honey-sticks",
     price: 49.99,
     originalPrice: 59.99,
@@ -32,7 +32,7 @@ export const products: Product[] = [
     ],
     badge: "Best Seller",
     description:
-      "Experience the ancient power of pure Himalayan Shilajit combined with raw, unprocessed honey. Each stick contains premium-grade Shilajit sourced from altitudes above 16,000 feet, delivering over 85 trace minerals and fulvic acid for optimal absorption and energy.",
+      "Experience the ancient power of pure Himalayan Shilajit combined with raw, unprocessed honey. Each stick contains premium-grade Shilajit sourced from altitudes above 16,000 feet, delivering over 85 trace minerals and fulvic acid for optimal absorption and energy. Now with 30 convenient sticks for a full month supply.",
     benefits: [
       "Boosts natural energy and stamina",
       "Supports cognitive function and mental clarity",
@@ -65,7 +65,7 @@ export const products: Product[] = [
   {
     id: "2",
     name: "Shilajit Energy Gummies",
-    subtitle: "Delicious Raspberry Flavor - 30 Gummies",
+    subtitle: "Delicious Raspberry Flavor - 60 Gummies",
     slug: "shilajit-gummies",
     price: 39.99,
     images: [
@@ -75,7 +75,7 @@ export const products: Product[] = [
     ],
     badge: "New",
     description:
-      "Enjoy the benefits of premium Shilajit in a delicious, convenient gummy form. Made with organic fruit pectin and natural raspberry flavor, these gummies make daily supplementation enjoyable while delivering the same potent benefits of traditional Shilajit.",
+      "Enjoy the benefits of premium Shilajit in a delicious, convenient gummy form. Made with organic fruit pectin and natural raspberry flavor, these gummies make daily supplementation enjoyable while delivering the same potent benefits of traditional Shilajit. Now with 60 gummies for a two-month supply.",
     benefits: [
       "Convenient and delicious daily supplementation",
       "Supports energy and vitality",
@@ -110,7 +110,7 @@ export const products: Product[] = [
   {
     id: "3",
     name: "Pure Shilajit Resin",
-    subtitle: "Authentic Himalayan Shilajit - 30g Jar",
+    subtitle: "Authentic Himalayan Shilajit - 20g Jar",
     slug: "pure-shilajit-resin",
     price: 79.99,
     originalPrice: 99.99,
@@ -121,7 +121,7 @@ export const products: Product[] = [
       "Highest concentration of active compounds",
       "Maximum bioavailability and absorption",
       "Traditional preparation methods preserved",
-      "Long-lasting supply (60+ servings)",
+      "Long-lasting supply (40+ servings)",
       "Most cost-effective option",
     ],
     ingredients: [
