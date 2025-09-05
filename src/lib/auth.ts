@@ -40,7 +40,7 @@ export const authOptions: NextAuthOptions = {
 
         return {
           id: user.id,
-          email: user.email,
+          email: user.email || "",
           name: user.name,
           image: user.image,
         }
@@ -52,12 +52,7 @@ export const authOptions: NextAuthOptions = {
     }),
     AppleProvider({
       clientId: process.env.APPLE_CLIENT_ID!,
-      clientSecret: {
-        appleId: process.env.APPLE_CLIENT_ID!,
-        teamId: process.env.APPLE_TEAM_ID!,
-        privateKey: process.env.APPLE_PRIVATE_KEY!,
-        keyId: process.env.APPLE_KEY_ID!,
-      },
+      clientSecret: process.env.APPLE_PRIVATE_KEY!,
     }),
   ],
   callbacks: {
@@ -87,7 +82,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: "/signin",
-    signUp: "/signup",
     error: "/signin", // Error code passed in query string as ?error=
   },
   events: {
