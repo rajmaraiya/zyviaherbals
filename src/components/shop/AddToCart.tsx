@@ -22,6 +22,8 @@ export function AddToCart({ product, variant = "default", size = "default", clas
   const { addItem } = useCartStore()
 
   const handleAddToCart = () => {
+    if (!product.inStock) return
+    
     addItem(product)
     setIsAdded(true)
 
@@ -29,6 +31,20 @@ export function AddToCart({ product, variant = "default", size = "default", clas
     setTimeout(() => {
       setIsAdded(false)
     }, 2000)
+  }
+
+  // Don't render button for out of stock products
+  if (!product.inStock) {
+    return (
+      <Button
+        variant="outline"
+        size={size}
+        className={cn("transition-all duration-200 cursor-not-allowed bg-gray-100 text-gray-500 border-gray-300", className)}
+        disabled={true}
+      >
+        Sold Out
+      </Button>
+    )
   }
 
   return (

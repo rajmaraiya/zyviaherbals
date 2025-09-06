@@ -95,20 +95,6 @@ export default function HomePage() {
                 Experience the premium quality and transformative benefits that our customers trust for their daily
                 wellness journey.
               </p>
-              
-              {/* Maintenance Notice */}
-              <div className="mt-8 max-w-2xl mx-auto">
-                <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-400 rounded-lg p-6 shadow-lg">
-                  <div className="flex items-center justify-center mb-3">
-                    <svg className="w-5 h-5 text-amber-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                    </svg>
-                    <span className="text-sm font-medium text-amber-800">
-                      🔧 Website Under Maintenance - Some products temporarily unavailable
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {featuredProducts.map((product) => (
@@ -178,7 +164,7 @@ export default function HomePage() {
                 <div key={index} className="group">
                   <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                     <Image
-                      src={image.src || `/placeholder.svg?height=500&width=400&query=${encodeURIComponent(image.alt)}`}
+                      src={image.src}
                       alt={image.alt}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"

@@ -15,13 +15,17 @@ export function ProductCard({ product }: ProductCardProps) {
       <Link href={`/product/${product.slug}`} className="block">
         <div className="aspect-square relative overflow-hidden">
           <Image
-            src={product.images[0] || `/placeholder.svg?height=400&width=400&query=${encodeURIComponent(product.name)}`}
+            src={product.images[0]}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
           {product.badge && (
-            <div className="absolute top-4 left-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+            <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold shadow-lg ${
+              product.badge === "Sold Out" 
+                ? "bg-gray-500 text-white" 
+                : "bg-amber-500 text-white"
+            }`}>
               {product.badge}
             </div>
           )}
