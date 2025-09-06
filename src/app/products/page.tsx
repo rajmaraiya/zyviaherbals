@@ -39,6 +39,24 @@ export default function ProductsPage() {
                 Discover our complete collection of premium Himalayan Shilajit and time-tested Ayurvedic supplements,
                 each rigorously tested for purity and potency to support your wellness journey.
               </p>
+              
+              {/* Maintenance Notice */}
+              <div className="mt-8 max-w-2xl mx-auto">
+                <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-400 rounded-lg p-6 shadow-lg">
+                  <div className="flex items-center mb-3">
+                    <svg className="w-6 h-6 text-amber-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                    <h3 className="text-lg font-semibold text-amber-800">
+                      🔧 Website Under Maintenance
+                    </h3>
+                  </div>
+                  <p className="text-amber-700 text-sm leading-relaxed">
+                    We're currently updating our product catalog to serve you better. Some products may be temporarily unavailable. 
+                    Our core products (Honey Sticks, Gummies, and Pure Resin) remain available. Thank you for your patience!
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Products Grid */}
