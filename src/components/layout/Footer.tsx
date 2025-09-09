@@ -6,10 +6,10 @@ export function Footer() {
     {
       title: "Products",
       links: [
-        { name: "All Products", href: "/products" },
-        { name: "Shilajit Honey Sticks", href: "/product/shilajit-honey-sticks" },
-        { name: "Shilajit Gummies", href: "/product/shilajit-gummies" },
-        { name: "Best Sellers", href: "/products?filter=bestsellers" },
+        { name: "All Products", href: "/products/all" },
+        { name: "Shilajit Honey Sticks", href: "/products/honey-sticks" },
+        { name: "Shilajit Gummies", href: "/products/gummies" },
+        { name: "Best Sellers", href: "/products/best-sellers" },
       ],
     },
     {
@@ -24,19 +24,19 @@ export function Footer() {
     {
       title: "Support",
       links: [
-        { name: "FAQ", href: "/faq" },
-        { name: "Shipping", href: "/shipping" },
-        { name: "Returns", href: "/returns" },
-        { name: "Track Order", href: "/track" },
+        { name: "FAQ", href: "/support/faq" },
+        { name: "Shipping", href: "/support/shipping" },
+        { name: "Returns", href: "/support/returns" },
+        { name: "Track Order", href: "/support/track-order" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Terms of Service", href: "/terms" },
-        { name: "Refund Policy", href: "/refunds" },
-        { name: "Accessibility", href: "/accessibility" },
+        { name: "Privacy Policy", href: "/legal/privacy" },
+        { name: "Terms of Service", href: "/legal/terms" },
+        { name: "Refund Policy", href: "/legal/refund-policy" },
+        { name: "Accessibility", href: "/legal/accessibility" },
       ],
     },
   ]
