@@ -26,9 +26,9 @@ export const products: Product[] = [
     price: 49.99,
     originalPrice: 59.99,
     images: [
-      "/products/shilajit-honey-sticks-main.jpg",
-      "/products/shilajit-honey-sticks-2.jpg",
-      "/products/shilajit-honey-sticks-3.jpg",
+      "/products/zyvia-honey-sticks-main.png",
+      "/products/zyvia-honey-sticks-main.png",
+      "/products/zyvia-honey-sticks-main.png",
     ],
     badge: "Sold Out",
     description:
@@ -69,9 +69,9 @@ export const products: Product[] = [
     slug: "shilajit-gummies",
     price: 57.00,
     images: [
-      "/products/shilajit-gummies-main.jpg",
-      "/products/shilajit-gummies-2.jpg",
-      "/products/shilajit-gummies-3.jpg",
+      "/products/zyvia-shilajit-gummies-main.png",
+      "/products/zyvia-shilajit-gummies-main.png",
+      "/products/zyvia-shilajit-gummies-main.png",
     ],
     badge: "Sold Out",
     description:
@@ -114,7 +114,7 @@ export const products: Product[] = [
     slug: "pure-shilajit-resin",
     price: 79.99,
     originalPrice: 99.99,
-    images: ["/products/zyvia-shilajit-resin.png", "/products/shilajit-resin-2.jpg", "/products/shilajit-resin-3.jpg"],
+    images: ["/products/zyvia-shilajit-resin-main.png", "/products/zyvia-shilajit-resin-main.png", "/products/zyvia-shilajit-resin-main.png"],
     badge: "Sold Out",
     description:
       "The most potent and traditional form of Shilajit available. This pure resin is hand-harvested from pristine Himalayan rocks and purified using ancient methods, preserving all natural compounds and maximum bioavailability.",
