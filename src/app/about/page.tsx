@@ -245,8 +245,8 @@ export default function AboutPage() {
 
                   <div className="text-center">
                     <div className="inline-block">
-                      <p className="font-display text-lg font-semibold text-zyvia-coffee mb-2">Dr. Priya Sharma</p>
-                      <p className="text-zyvia-coffee/70">Founder & Chief Wellness Officer</p>
+                      <p className="font-display text-lg font-semibold text-zyvia-coffee mb-2">Raj Maraiya</p>
+                      <p className="text-zyvia-coffee/70">Founder</p>
                       <div className="mt-4 w-32 h-8 bg-zyvia-coffee/10 rounded flex items-center justify-center">
                         <span className="text-zyvia-coffee/60 text-sm italic">Signature</span>
                       </div>

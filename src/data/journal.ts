@@ -38,9 +38,9 @@ export const journalPosts: JournalPost[] = [
       <p>While we honor traditional harvesting methods from the pristine Himalayas, we also subject every batch to rigorous third-party testing. This ensures purity, potency, and safety—giving you confidence in both the ancient wisdom and modern quality standards.</p>
     `,
     author: {
-      name: "Dr. Priya Sharma",
-      role: "Lead Ayurvedic Specialist",
-      avatar: "/team/dr-priya.jpg"
+      name: "Raj Maraiya",
+      role: "Founder",
+      avatar: "/team/raj-maraiya.jpg"
     },
     publishedAt: "2024-01-15",
     readTime: "5 min read",

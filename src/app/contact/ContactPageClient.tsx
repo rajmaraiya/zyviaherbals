@@ -66,7 +66,7 @@ export default function ContactPageClient() {
     {
       icon: Phone,
       title: "Phone Support",
-      content: "+1 (555) 123-4567",
+      content: "+916265926623",
       description: "Speak with our wellness team",
     },
     {
@@ -78,7 +78,7 @@ export default function ContactPageClient() {
     {
       icon: MapPin,
       title: "Headquarters",
-      content: "San Francisco, CA",
+      content: "India",
       description: "Where wellness meets innovation",
     },
   ]
@@ -261,7 +261,7 @@ export default function ContactPageClient() {
                   </div>
                   <div className="mt-4 text-center">
                     <p className="text-zyvia-coffee/70 text-sm">
-                      Located in the heart of San Francisco, where innovation meets wellness.
+                      Located in India, where innovation meets wellness.
                     </p>
                   </div>
                 </div>
