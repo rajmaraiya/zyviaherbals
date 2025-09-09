@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { products } from '@/data/products';
-import ProductCard from '@/components/ui/product-card';
+import { ProductCard } from '@/components/shop/ProductCard';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'Best Sellers | Zyvia Herbals',
@@ -11,11 +13,13 @@ export default function BestSellersPage() {
   // Mark all current products as best sellers for now
   const bestSellerProducts = products.map(product => ({
     ...product,
-    badges: [...(product.badges || []), 'Best Seller']
+    badge: product.badge === 'Sold Out' ? 'Sold Out' : 'Best Seller'
   }));
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
+    <>
+      <Header />
+      <main className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
@@ -157,6 +161,8 @@ export default function BestSellersPage() {
           </div>
         </div>
       </div>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
 }

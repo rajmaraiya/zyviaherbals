@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { products } from '@/data/products';
-import ProductCard from '@/components/ui/product-card';
+import { ProductCard } from '@/components/shop/ProductCard';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'Shilajit Gummies | Zyvia Herbals',
@@ -14,7 +16,9 @@ export default function GummiesPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
+    <>
+      <Header />
+      <main className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
@@ -142,6 +146,8 @@ export default function GummiesPage() {
           </div>
         )}
       </div>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
 }
