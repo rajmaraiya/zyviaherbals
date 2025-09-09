@@ -114,7 +114,7 @@ export const products: Product[] = [
     slug: "pure-shilajit-resin",
     price: 79.99,
     originalPrice: 99.99,
-    images: ["/products/shilajit-resin-main.jpg", "/products/shilajit-resin-2.jpg", "/products/shilajit-resin-3.jpg"],
+    images: ["/products/zyvia-shilajit-resin.png", "/products/shilajit-resin-2.jpg", "/products/shilajit-resin-3.jpg"],
     badge: "Sold Out",
     description:
       "The most potent and traditional form of Shilajit available. This pure resin is hand-harvested from pristine Himalayan rocks and purified using ancient methods, preserving all natural compounds and maximum bioavailability.",
