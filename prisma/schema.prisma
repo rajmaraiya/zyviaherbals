@@ -120,15 +120,42 @@ model Variant {
  * ===========================
  */
 model Review {
-  id        String   @id @default(cuid())
-  rating    Int
-  title     String?
-  body      String?
-  userId    String?
-  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
-  productId String
-  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
-  createdAt DateTime @default(now())
+  id          String        @id @default(cuid())
+  rating      Int           // 1-5 stars
+  title       String?
+  body        String
+  
+  // User info (can be anonymous but captured)
+  userId      String?
+  user        User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  
+  // Verification info
+  customerName    String        // Display name (can be "Anonymous")
+  customerEmail   String        // For verification (not displayed)
+  isVerifiedBuyer Boolean       @default(false) // True if they purchased the product
+  orderNumber     String?       // Link to order for verification
+  
+  // Product relationship
+  productId   String
+  product     Product       @relation(fields: [productId], references: [id], onDelete: Cascade)
+  
+  // Review images
+  images      ReviewImage[]
+  
+  // Moderation
+  isApproved  Boolean       @default(false)
+  isHelpful   Int           @default(0) // Helpful votes count
+  
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model ReviewImage {
+  id       String @id @default(cuid())
+  url      String // UploadThing URL
+  alt      String?
+  reviewId String
+  review   Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
 }
 
 /**

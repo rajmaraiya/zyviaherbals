@@ -10,6 +10,7 @@ import { Breadcrumbs } from "@/components/common/Breadcrumbs"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { useCartStore } from "@/store/cart"
+import { ScarcityIndicators } from "@/components/marketing/ScarcityIndicators"
 import { Trash2, ShoppingBag } from "lucide-react"
 
 export default function CartPage() {
@@ -127,6 +128,9 @@ export default function CartPage() {
 
               {/* Order Summary */}
               <div className="lg:col-span-1">
+                {/* Cart Scarcity Alert */}
+                <ScarcityIndicators variant="cart" className="mb-6" />
+                
                 <div className="bg-white rounded-2xl p-6 shadow-lg sticky top-8">
                   <h2 className="font-display text-xl font-semibold text-zyvia-coffee mb-6">Order Summary</h2>
 

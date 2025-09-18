@@ -6,6 +6,8 @@ import { ProductCard } from "@/components/shop/ProductCard"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { getFeaturedProducts } from "@/data/products"
+import { HomepageReviews } from "@/components/reviews/HomepageReviews"
+import { ScarcityIndicators, ActivityNotifications } from "@/components/marketing/ScarcityIndicators"
 import { Shield, Award, Leaf, FlaskConical, Heart, CheckCircle, Star, ArrowRight, Zap, Brain, Shield as ShieldIcon, CreditCard, Lock, RotateCcw } from "lucide-react"
 
 export default function HomePage() {
@@ -20,23 +22,7 @@ export default function HomePage() {
     { icon: CheckCircle, label: "30-Day Guarantee", description: "Money back guarantee" },
   ]
 
-  const testimonials = [
-    {
-      text: "Amazing energy boost! I feel more focused and energized throughout the day.",
-      author: "Alex, CA",
-      rating: 5
-    },
-    {
-      text: "Best shilajit I've tried. Quality is unmatched and shipping was super fast.",
-      author: "Sarah, NY",
-      rating: 5
-    },
-    {
-      text: "Love these gummies! They taste great and I notice a real difference in my energy.",
-      author: "Mike, TX",
-      rating: 5
-    }
-  ]
+  // Real testimonials will be loaded from database
 
   const lifestyleSections = [
     {
@@ -124,11 +110,8 @@ export default function HomePage() {
                   </Button>
                 </div>
                 
-                {/* Urgency Text - Mobile Optimized */}
-                <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 md:px-6 py-3 rounded-full inline-flex items-center gap-2 font-bold text-sm md:text-lg shadow-lg animate-pulse text-center">
-                  <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
-                  <span className="block sm:inline">Limited Launch – Free Shipping for First 100 Customers</span>
-                </div>
+                {/* Advanced Scarcity System */}
+                <ScarcityIndicators variant="hero" />
               </div>
             </div>
           </Container>
@@ -217,7 +200,7 @@ export default function HomePage() {
                         <span className="text-lg font-semibold text-gray-700">(4.8)</span>
                       </div>
                       <p className="text-gray-600 italic text-sm">
-                        "{testimonials[index]?.text}" - {testimonials[index]?.author}
+                        "Authentic reviews from verified customers"
                       </p>
                     </div>
 
@@ -321,44 +304,10 @@ export default function HomePage() {
           </Container>
         </section>
 
-        {/* Social Proof Section */}
+        {/* Authentic Customer Reviews */}
         <section className="py-24 bg-gradient-to-br from-amber-50 to-yellow-50">
           <Container>
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-                Loved by Thousands Worldwide
-              </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                Join the community of wellness enthusiasts who have transformed their lives with ZYVIA Herbals
-              </p>
-            </div>
-            
-            {/* Testimonials Carousel */}
-            <div className="mb-16">
-              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-amber-100">
-                    <div className="flex items-center mb-4">
-                      {Array.from({length: testimonial.rating}).map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-amber-500 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-lg text-slate-700 mb-6 leading-relaxed italic">
-                      "{testimonial.text}"
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                        {testimonial.author.split(' ')[0][0]}
-                      </div>
-                      <div>
-                        <p className="font-semibold text-slate-900">{testimonial.author.split(',')[0]}</p>
-                        <p className="text-sm text-slate-600">Verified Customer</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <HomepageReviews />
             
             {/* As Seen In Section */}
             <div className="text-center mb-16">
@@ -577,6 +526,9 @@ export default function HomePage() {
         </section>
       </main>
       <Footer />
+      
+      {/* Real-time Activity Notifications */}
+      <ActivityNotifications />
     </>
   )
 }
