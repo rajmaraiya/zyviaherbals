@@ -6,7 +6,7 @@ import { ProductCard } from "@/components/shop/ProductCard"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { getFeaturedProducts } from "@/data/products"
-import { Shield, Award, Leaf, FlaskConical, Heart } from "lucide-react"
+import { Shield, Award, Leaf, FlaskConical, Heart, CheckCircle, Star, ArrowRight, Zap, Brain, Shield as ShieldIcon, CreditCard, Lock, RotateCcw } from "lucide-react"
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts()
@@ -17,6 +17,43 @@ export default function HomePage() {
     { icon: Shield, label: "No Added Sugar", description: "Naturally sweetened only" },
     { icon: Heart, label: "Vegan", description: "100% plant-based formulas" },
     { icon: Award, label: "GMP", description: "Good Manufacturing Practices" },
+    { icon: CheckCircle, label: "30-Day Guarantee", description: "Money back guarantee" },
+  ]
+
+  const testimonials = [
+    {
+      text: "Amazing energy boost! I feel more focused and energized throughout the day.",
+      author: "Alex, CA",
+      rating: 5
+    },
+    {
+      text: "Best shilajit I've tried. Quality is unmatched and shipping was super fast.",
+      author: "Sarah, NY",
+      rating: 5
+    },
+    {
+      text: "Love these gummies! They taste great and I notice a real difference in my energy.",
+      author: "Mike, TX",
+      rating: 5
+    }
+  ]
+
+  const lifestyleSections = [
+    {
+      title: "Morning Ritual Energy",
+      description: "Start your day with pure Himalayan Shilajit resin dissolved in warm tea",
+      image: "/lifestyle/morning-ritual.jpg"
+    },
+    {
+      title: "Daily Wellness Boost",
+      description: "Convenient gummies perfect for your busy workday",
+      image: "/lifestyle/daily-wellness.jpg"
+    },
+    {
+      title: "Natural Strength & Focus",
+      description: "Premium honey sticks for pre-workout natural energy",
+      image: "/lifestyle/strength-focus.jpg"
+    }
   ]
 
   const lifestyleImages = [
@@ -30,81 +67,365 @@ export default function HomePage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative bg-slate-900 text-white overflow-hidden">
+        <section className="relative bg-slate-900 text-white overflow-hidden min-h-screen flex items-center">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-stone-800 to-slate-900"></div>
           <div className="absolute inset-0 bg-[url('/hero-pattern.svg')] opacity-10"></div>
-          <Container className="relative z-10">
-            <div className="py-24 lg:py-32">
-              <div className="max-w-4xl mx-auto text-center">
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+          <Container className="relative z-10 w-full">
+            <div className="py-16 lg:py-24">
+              <div className="max-w-5xl mx-auto text-center">
+                <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white">
                   Where Ancient Ayurveda
-                  <span className="block text-amber-400">Meets Modern Science</span>
+                  <span className="block text-amber-400 mt-2">Meets Modern Science</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
+                
+                {/* Benefits Subheading */}
+                <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8 text-lg md:text-xl">
+                  <div className="flex items-center gap-2 text-amber-300">
+                    <Zap className="h-5 w-5" />
+                    <span className="font-semibold">Energy</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-amber-300">
+                    <Brain className="h-5 w-5" />
+                    <span className="font-semibold">Focus</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-amber-300">
+                    <ShieldIcon className="h-5 w-5" />
+                    <span className="font-semibold">Recovery</span>
+                  </div>
+                </div>
+                
+                <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-4xl mx-auto">
                   Discover the transformative power of premium Himalayan Shilajit and time-tested Ayurvedic supplements,
                   backed by rigorous testing and modern quality standards.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                
+                {/* Large, Bold CTAs - Mobile Optimized */}
+                <div className="flex flex-col gap-4 justify-center mb-8">
                   <Button
                     asChild
                     size="xl"
-                    variant="default"
-                    className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold"
+                    className="bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-slate-900 font-bold text-xl md:text-2xl px-8 md:px-12 py-4 md:py-6 rounded-xl shadow-2xl hover:shadow-amber-500/25 transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
                   >
-                    <Link href="/products">Shop Now</Link>
+                    <Link href="/products" className="flex items-center justify-center gap-2">
+                      <span>Shop Now</span>
+                      <ArrowRight className="h-6 w-6" />
+                    </Link>
                   </Button>
                   <Button
                     asChild
                     size="xl"
                     variant="outline"
-                    className="border-gray-300 text-gray-200 hover:bg-gray-200 hover:text-slate-900 font-semibold bg-transparent"
+                    className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-900 font-bold text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-xl bg-transparent backdrop-blur-sm transition-all duration-300 w-full sm:w-auto"
                   >
-                    <Link href="/science">Discover the Science</Link>
+                    <Link href="/science" className="flex items-center justify-center gap-2">
+                      <FlaskConical className="h-6 w-6" />
+                      <span>Discover the Science</span>
+                    </Link>
                   </Button>
+                </div>
+                
+                {/* Urgency Text - Mobile Optimized */}
+                <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 md:px-6 py-3 rounded-full inline-flex items-center gap-2 font-bold text-sm md:text-lg shadow-lg animate-pulse text-center">
+                  <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
+                  <span className="block sm:inline">Limited Launch – Free Shipping for First 100 Customers</span>
                 </div>
               </div>
             </div>
           </Container>
         </section>
 
-        {/* Trust Icons */}
-        <section className="py-16 bg-stone-50">
+        {/* Trust Section - Premium Design */}
+        <section className="py-20 bg-gradient-to-br from-stone-50 to-stone-100 border-t border-stone-200">
           <Container>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <div className="text-center mb-12">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                Trusted by Thousands
+              </h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                Premium quality you can trust, backed by certifications and guarantees
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {trustIcons.map((item, index) => (
                 <div key={index} className="text-center group">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-2xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300">
-                    <item.icon className="h-8 w-8 text-amber-500" />
+                  <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-white to-stone-50 rounded-3xl shadow-xl flex items-center justify-center group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 border border-stone-200/50">
+                    <item.icon className="h-10 w-10 text-amber-600" />
                   </div>
-                  <h3 className="font-display font-semibold text-slate-900 mb-1">{item.label}</h3>
-                  <p className="text-sm text-slate-600">{item.description}</p>
+                  <h3 className="font-display font-bold text-slate-900 mb-2 text-sm">{item.label}</h3>
+                  <p className="text-xs text-slate-600 leading-tight">{item.description}</p>
                 </div>
               ))}
             </div>
           </Container>
         </section>
 
-        {/* Featured Products */}
+        {/* Featured Products with High-Converting Design */}
         <section className="py-24 bg-white">
           <Container>
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-slate-900 mb-4">
                 Our Most Loved Products
               </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Experience the premium quality and transformative benefits that our customers trust for their daily
-                wellness journey.
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+                Experience the premium quality and transformative benefits that our customers trust for their daily wellness journey.
               </p>
+              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-6 py-2 rounded-full font-semibold">
+                <CheckCircle className="h-5 w-5" />
+                <span>Over 10,000 Happy Customers</span>
+              </div>
             </div>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+            
+            {/* Enhanced Product Grid */}
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+              {/* Featured Products */}
+              {featuredProducts.map((product, index) => (
+                <div key={product.id} className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-amber-200 relative">
+                  {/* Special Offer Badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <div className="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
+                      Limited Offer
+                    </div>
+                  </div>
+                  
+                  <Link href={`/product/${product.slug}`} className="block">
+                    <div className="aspect-square relative overflow-hidden">
+                      <Image
+                        src={product.images[0]}
+                        alt={product.name}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  </Link>
+
+                  <div className="p-8">
+                    <Link href={`/product/${product.slug}`}>
+                      <h3 className="font-display text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
+                        {product.name}
+                      </h3>
+                    </Link>
+                    <p className="text-gray-600 mb-4 text-lg leading-relaxed">{product.subtitle}</p>
+
+                    {/* Star Ratings with Review Snippet */}
+                    <div className="mb-6">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex text-amber-500 text-xl">
+                          {Array.from({length: 5}).map((_, i) => (
+                            <Star key={i} className="h-5 w-5 fill-current" />
+                          ))}
+                        </div>
+                        <span className="text-lg font-semibold text-gray-700">(4.8)</span>
+                      </div>
+                      <p className="text-gray-600 italic text-sm">
+                        "{testimonials[index]?.text}" - {testimonials[index]?.author}
+                      </p>
+                    </div>
+
+                    {/* Pricing with Launch Offer */}
+                    <div className="mb-6">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-3xl font-bold text-slate-900">${(Number(product.price) * 0.85).toFixed(2)}</span>
+                        <span className="text-xl text-gray-500 line-through">${product.price}</span>
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-sm font-bold">15% OFF</span>
+                      </div>
+                      <p className="text-sm text-gray-600">Launch price - was ${product.originalPrice || product.price}</p>
+                    </div>
+
+                    {/* Large Buy Now Button */}
+                    <Button 
+                      asChild 
+                      className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mb-4"
+                    >
+                      <Link href={`/product/${product.slug}`} className="flex items-center justify-center gap-2">
+                        <span>Buy Now</span>
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                    
+                    <Button asChild variant="outline" className="w-full border-2 border-amber-500 text-amber-700 hover:bg-amber-50 font-semibold">
+                      <Link href={`/product/${product.slug}`}>View Details</Link>
+                    </Button>
+                  </div>
+                </div>
               ))}
+              
+              {/* Bundle & Save Card */}
+              <div className="group bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-amber-200 relative">
+                <div className="absolute top-4 left-4 z-10">
+                  <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                    Best Value
+                  </div>
+                </div>
+                
+                <div className="p-8 h-full flex flex-col">
+                  <div className="flex-1">
+                    <h3 className="font-display text-2xl font-bold text-gray-900 mb-4">
+                      Complete Wellness Bundle
+                    </h3>
+                    <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                      Get all three products: Honey Sticks + Gummies + Resin at 10% off
+                    </p>
+                    
+                    {/* Bundle Contents */}
+                    <div className="mb-6 space-y-2">
+                      <div className="flex items-center gap-2 text-gray-700">
+                        <CheckCircle className="h-4 w-4 text-green-600" />
+                        <span>Premium Shilajit Honey Sticks (30 count)</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-gray-700">
+                        <CheckCircle className="h-4 w-4 text-green-600" />
+                        <span>Shilajit Energy Gummies (60 count)</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-gray-700">
+                        <CheckCircle className="h-4 w-4 text-green-600" />
+                        <span>Pure Shilajit Resin (15g jar)</span>
+                      </div>
+                    </div>
+
+                    {/* Bundle Pricing */}
+                    <div className="mb-6">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-3xl font-bold text-slate-900">$149.99</span>
+                        <span className="text-xl text-gray-500 line-through">$166.99</span>
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-sm font-bold">Save $17</span>
+                      </div>
+                      <p className="text-sm text-gray-600">10% Bundle Discount Applied</p>
+                    </div>
+                  </div>
+
+                  {/* Bundle CTA */}
+                  <div className="mt-auto">
+                    <Button 
+                      asChild 
+                      className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mb-4"
+                    >
+                      <Link href="/products?bundle=complete" className="flex items-center justify-center gap-2">
+                        <span>Bundle & Save</span>
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                    
+                    <p className="text-xs text-center text-gray-600">
+                      FREE shipping + 30-day guarantee
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="text-center mt-12">
-              <Button asChild size="lg" variant="ghost">
+            
+            <div className="text-center">
+              <Button asChild size="xl" variant="outline" className="border-2 border-amber-500 text-amber-700 hover:bg-amber-50 font-bold text-lg px-8 py-4">
                 <Link href="/products">View All Products</Link>
               </Button>
+            </div>
+          </Container>
+        </section>
+
+        {/* Social Proof Section */}
+        <section className="py-24 bg-gradient-to-br from-amber-50 to-yellow-50">
+          <Container>
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-slate-900 mb-4">
+                Loved by Thousands Worldwide
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Join the community of wellness enthusiasts who have transformed their lives with ZYVIA Herbals
+              </p>
+            </div>
+            
+            {/* Testimonials Carousel */}
+            <div className="mb-16">
+              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-amber-100">
+                    <div className="flex items-center mb-4">
+                      {Array.from({length: testimonial.rating}).map((_, i) => (
+                        <Star key={i} className="h-5 w-5 text-amber-500 fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-lg text-slate-700 mb-6 leading-relaxed italic">
+                      "{testimonial.text}"
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        {testimonial.author.split(' ')[0][0]}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-slate-900">{testimonial.author.split(',')[0]}</p>
+                        <p className="text-sm text-slate-600">Verified Customer</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* As Seen In Section */}
+            <div className="text-center mb-16">
+              <h3 className="font-display text-2xl font-bold text-slate-900 mb-8">
+                As Featured In
+              </h3>
+              <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
+                {/* Placeholder media logos */}
+                <div className="bg-slate-200 px-8 py-4 rounded-lg">
+                  <span className="text-slate-600 font-bold text-lg">Forbes</span>
+                </div>
+                <div className="bg-slate-200 px-8 py-4 rounded-lg">
+                  <span className="text-slate-600 font-bold text-lg">Men's Health</span>
+                </div>
+                <div className="bg-slate-200 px-8 py-4 rounded-lg">
+                  <span className="text-slate-600 font-bold text-lg">Wellness Today</span>
+                </div>
+                <div className="bg-slate-200 px-8 py-4 rounded-lg">
+                  <span className="text-slate-600 font-bold text-lg">Natural News</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Social Media Section */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <h3 className="font-display text-3xl font-bold text-slate-900 mb-4">
+                  Follow Our Journey
+                </h3>
+                <p className="text-lg text-slate-600">
+                  Join our community for wellness tips, product updates, and exclusive offers
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Instagram Section */}
+                <div className="text-center">
+                  <div className="bg-gradient-to-br from-purple-400 to-pink-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                  </div>
+                  <h4 className="font-bold text-xl text-slate-900 mb-2">Instagram</h4>
+                  <p className="text-slate-600 mb-4">Daily wellness inspiration & customer stories</p>
+                  <Button asChild variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-50">
+                    <Link href="https://instagram.com/zyviaherbals" target="_blank">
+                      @ZyviaHerbals
+                    </Link>
+                  </Button>
+                </div>
+                
+                {/* TikTok Section */}
+                <div className="text-center">
+                  <div className="bg-gradient-to-br from-black to-gray-800 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                    </svg>
+                  </div>
+                  <h4 className="font-bold text-xl text-slate-900 mb-2">TikTok</h4>
+                  <p className="text-slate-600 mb-4">Quick wellness tips & behind-the-scenes</p>
+                  <Button asChild variant="outline" className="border-2 border-gray-800 text-gray-800 hover:bg-gray-50">
+                    <Link href="https://tiktok.com/@zyviaherbals" target="_blank">
+                      @ZyviaHerbals
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </Container>
         </section>
@@ -147,31 +468,110 @@ export default function HomePage() {
           </Container>
         </section>
 
-        {/* Lifestyle Strip */}
-        <section className="py-24 bg-white">
+        {/* New Lifestyle Section with Full-Width Images */}
+        <section className="py-0 bg-white">
+          <div className="space-y-0">
+            {lifestyleSections.map((lifestyle, index) => (
+              <div key={index} className={`relative min-h-[70vh] flex items-center ${index % 2 === 0 ? 'bg-slate-900' : 'bg-stone-100'}`}>
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <Image
+                    src={lifestyle.image}
+                    alt={lifestyle.title}
+                    fill
+                    className={`object-cover ${index % 2 === 0 ? 'opacity-30' : 'opacity-20'}`}
+                  />
+                  <div className={`absolute inset-0 ${index % 2 === 0 ? 'bg-slate-900/70' : 'bg-white/80'}`}></div>
+                </div>
+                
+                {/* Content */}
+                <Container className="relative z-10">
+                  <div className={`max-w-2xl ${index % 2 === 0 ? 'text-white' : 'text-slate-900'} ${index % 2 === 1 ? 'ml-auto text-right' : ''}`}>
+                    <h3 className={`font-display text-3xl md:text-5xl font-bold mb-6 ${index % 2 === 0 ? 'text-amber-400' : 'text-amber-600'}`}>
+                      {lifestyle.title}
+                    </h3>
+                    <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
+                      {lifestyle.description}
+                    </p>
+                    <Button 
+                      asChild 
+                      size="lg" 
+                      className={`${
+                        index % 2 === 0 
+                          ? 'bg-amber-500 hover:bg-amber-600 text-slate-900' 
+                          : 'bg-slate-900 hover:bg-slate-800 text-white'
+                      } font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
+                    >
+                      <Link href="/products" className="flex items-center gap-2">
+                        <span>Shop Now</span>
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </div>
+                </Container>
+              </div>
+            ))}
+          </div>
+        </section>
+        
+        {/* Checkout Trust Section */}
+        <section className="py-16 bg-slate-900 text-white">
           <Container>
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Wellness That Fits Your Life
+            <div className="text-center mb-12">
+              <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+                Shop with Complete Confidence
               </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                From morning rituals to evening wind-down, discover how our premium supplements seamlessly integrate
-                into your daily wellness routine.
+              <p className="text-gray-300 max-w-2xl mx-auto">
+                Your security and satisfaction are our top priorities
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {lifestyleImages.map((image, index) => (
-                <div key={index} className="group">
-                  <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {/* Secure Checkout */}
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center">
+                  <Lock className="h-8 w-8 text-white" />
                 </div>
-              ))}
+                <h3 className="font-bold text-xl text-white mb-2">Secure Checkout</h3>
+                <p className="text-gray-300 mb-4">256-bit SSL encryption protects your personal information</p>
+              </div>
+              
+              {/* Payment Options */}
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center">
+                  <CreditCard className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-white mb-2">Flexible Payment</h3>
+                <p className="text-gray-300 mb-4">All major credit cards, PayPal, and secure payment methods</p>
+              </div>
+              
+              {/* Money Back Guarantee */}
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-2xl flex items-center justify-center">
+                  <RotateCcw className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-white mb-2">30-Day Returns</h3>
+                <p className="text-gray-300 mb-4">Free returns within 30 days, no questions asked</p>
+              </div>
+            </div>
+            
+            {/* Payment Logos */}
+            <div className="flex justify-center items-center gap-8 opacity-70">
+              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold">Visa</span>
+              </div>
+              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold">Mastercard</span>
+              </div>
+              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold">PayPal</span>
+              </div>
+              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold">Stripe</span>
+              </div>
+              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold">Google Pay</span>
+              </div>
             </div>
           </Container>
         </section>
