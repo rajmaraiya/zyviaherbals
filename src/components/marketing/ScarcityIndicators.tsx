@@ -245,14 +245,18 @@ export function ActivityNotifications() {
   }>>([])
 
   const activityMessages = [
-    "Sarah from New York just purchased Shilajit Resin",
-    "Mike from California added 2 Honey Sticks to cart", 
-    "Emma from Texas just left a 5-star review",
-    "John from Florida purchased the Complete Bundle",
-    "Lisa from Nevada just signed up for updates",
-    "David from Oregon viewed this product 3 times",
-    "Anna from Utah just shared on social media",
-    "Chris from Maine purchased Shilajit Gummies"
+    "Priya from Mumbai just purchased Shilajit Resin",
+    "Arjun from Bangalore added 2 Honey Sticks to cart", 
+    "Sneha from Delhi just left a 5-star review",
+    "Rajesh from Pune purchased the Complete Bundle",
+    "Kavya from Hyderabad just signed up for updates",
+    "Amit from Chennai viewed this product 3 times",
+    "Nisha from Kolkata just shared on social media",
+    "Rohan from Ahmedabad purchased Shilajit Gummies",
+    "Meera from Jaipur just ordered for the second time",
+    "Vikram from Lucknow added bundle to wishlist",
+    "Ananya from Indore just recommended to friends",
+    "Karan from Surat purchased premium resin"
   ]
 
   useEffect(() => {

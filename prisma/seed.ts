@@ -40,7 +40,7 @@ async function main() {
     slug: "zyvia-shilajit-gummies",
     title: "Shilajit Gummies",
     description: "Bioavailable fulvic minerals in a clean gummy. No added sugar.",
-    price: 39,
+    price: 3315, // ₹3,315 (was $39)
     benefits: ["Energy", "Cognitive", "Mineral balance"],
     images: [{ url: "/products/zyvia-shilajit-gummies.png", alt: "Zyvia Shilajit Gummies" }],
     featured: true,
@@ -50,7 +50,7 @@ async function main() {
     slug: "zyvia-honey-sticks",
     title: "Himalayan Shilajit Honey Sticks",
     description: "Travel-friendly sticks with Himalayan honey + shilajit.",
-    price: 29,
+    price: 2465, // ₹2,465 (was $29)
     benefits: ["Sustained energy", "Pre-workout", "Travel-friendly"],
     images: [{ url: "/products/zyvia-honey-sticks.png", alt: "Zyvia Shilajit Honey Sticks" }],
     featured: true,
@@ -60,7 +60,7 @@ async function main() {
     slug: "zyvia-shilajit-resin",
     title: "Pure Shilajit Resin",
     description: "Peak potency resin with balanced trace minerals.",
-    price: 59,
+    price: 5015, // ₹5,015 (was $59)
     benefits: ["Vitality", "Mineral balance", "Recovery"],
     images: [{ url: "/products/zyvia-shilajit-resin.png", alt: "Zyvia Shilajit Resin" }],
     featured: true,
@@ -71,7 +71,7 @@ async function main() {
     slug: "collagen",
     title: "Hydrolyzed Collagen",
     description: "Type I & III collagen for skin, hair, joints.",
-    price: 44,
+    price: 3740, // ₹3,740 (was $44)
     benefits: ["Skin", "Joint", "Recovery"],
     images: [{ url: "/products/collagen.png", alt: "Collagen" }],
   });
@@ -80,7 +80,7 @@ async function main() {
     slug: "probiotic",
     title: "Probiotic Complex",
     description: "Multi-strain CFU for gut balance and comfort.",
-    price: 32,
+    price: 2720, // ₹2,720 (was $32)
     benefits: ["Gut", "Immunity"],
     images: [{ url: "/products/probiotic.png", alt: "Probiotic" }],
   });
@@ -89,7 +89,7 @@ async function main() {
     slug: "magnesium",
     title: "Magnesium Glycinate",
     description: "Calm evenings, relaxed muscles, deeper sleep.",
-    price: 28,
+    price: 2380, // ₹2,380 (was $28)
     benefits: ["Sleep", "Recovery", "Calm"],
     images: [{ url: "/products/magnesium.png", alt: "Magnesium" }],
   });
@@ -98,7 +98,7 @@ async function main() {
     slug: "d3-k2",
     title: "Vitamin D3 + K2",
     description: "Bone support and immune balance in harmony.",
-    price: 26,
+    price: 2210, // ₹2,210 (was $26)
     benefits: ["Bone", "Immunity"],
     images: [{ url: "/products/d3k2.png", alt: "Vitamin D3 + K2" }],
   });
@@ -107,7 +107,7 @@ async function main() {
     slug: "acv",
     title: "Apple Cider Vinegar Complex",
     description: "ACV + chromium for metabolic support.",
-    price: 24,
+    price: 2040, // ₹2,040 (was $24)
     benefits: ["Metabolism", "Gut"],
     images: [{ url: "/products/acv.png", alt: "Apple Cider Vinegar" }],
   });

@@ -14,11 +14,11 @@ export default function HomePage() {
   const featuredProducts = getFeaturedProducts()
 
   const trustIcons = [
-    { icon: Leaf, label: "USDA Organic", description: "Certified organic ingredients" },
+    { icon: Leaf, label: "FSSAI Certified", description: "Food Safety Standards Authority of India" },
     { icon: FlaskConical, label: "Lab Tested", description: "Third-party verified purity" },
     { icon: Shield, label: "No Added Sugar", description: "Naturally sweetened only" },
     { icon: Heart, label: "Vegan", description: "100% plant-based formulas" },
-    { icon: Award, label: "GMP", description: "Good Manufacturing Practices" },
+    { icon: Award, label: "GMP Certified", description: "WHO-GMP compliant facility" },
     { icon: CheckCircle, label: "30-Day Guarantee", description: "Money back guarantee" },
   ]
 
@@ -207,11 +207,11 @@ export default function HomePage() {
                     {/* Pricing with Launch Offer */}
                     <div className="mb-6">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-3xl font-bold text-slate-900">${(Number(product.price) * 0.85).toFixed(2)}</span>
-                        <span className="text-xl text-gray-500 line-through">${product.price}</span>
+                        <span className="text-3xl font-bold text-slate-900">₹{(Number(product.price) * 85 * 0.85).toFixed(0)}</span>
+                        <span className="text-xl text-gray-500 line-through">₹{(Number(product.price) * 85).toFixed(0)}</span>
                         <span className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-sm font-bold">15% OFF</span>
                       </div>
-                      <p className="text-sm text-gray-600">Launch price - was ${product.originalPrice || product.price}</p>
+                      <p className="text-sm text-gray-600">Launch price - was ₹{(Number(product.originalPrice || product.price) * 85).toFixed(0)}</p>
                     </div>
 
                     {/* Large Buy Now Button */}
@@ -268,9 +268,9 @@ export default function HomePage() {
                     {/* Bundle Pricing */}
                     <div className="mb-6">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-3xl font-bold text-slate-900">$149.99</span>
-                        <span className="text-xl text-gray-500 line-through">$166.99</span>
-                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-sm font-bold">Save $17</span>
+                        <span className="text-3xl font-bold text-slate-900">₹12,749</span>
+                        <span className="text-xl text-gray-500 line-through">₹14,194</span>
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-sm font-bold">Save ₹1,445</span>
                       </div>
                       <p className="text-sm text-gray-600">10% Bundle Discount Applied</p>
                     </div>
@@ -289,7 +289,7 @@ export default function HomePage() {
                     </Button>
                     
                     <p className="text-xs text-center text-gray-600">
-                      FREE shipping + 30-day guarantee
+                      FREE shipping across India + 30-day guarantee
                     </p>
                   </div>
                 </div>
@@ -315,18 +315,18 @@ export default function HomePage() {
                 As Featured In
               </h3>
               <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-                {/* Placeholder media logos */}
+                {/* Indian media logos */}
                 <div className="bg-slate-200 px-8 py-4 rounded-lg">
-                  <span className="text-slate-600 font-bold text-lg">Forbes</span>
+                  <span className="text-slate-600 font-bold text-lg">Times of India</span>
                 </div>
                 <div className="bg-slate-200 px-8 py-4 rounded-lg">
-                  <span className="text-slate-600 font-bold text-lg">Men's Health</span>
+                  <span className="text-slate-600 font-bold text-lg">Hindustan Times</span>
                 </div>
                 <div className="bg-slate-200 px-8 py-4 rounded-lg">
-                  <span className="text-slate-600 font-bold text-lg">Wellness Today</span>
+                  <span className="text-slate-600 font-bold text-lg">India Today</span>
                 </div>
                 <div className="bg-slate-200 px-8 py-4 rounded-lg">
-                  <span className="text-slate-600 font-bold text-lg">Natural News</span>
+                  <span className="text-slate-600 font-bold text-lg">Economic Times</span>
                 </div>
               </div>
             </div>
@@ -491,7 +491,7 @@ export default function HomePage() {
                   <CreditCard className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="font-bold text-xl text-white mb-2">Flexible Payment</h3>
-                <p className="text-gray-300 mb-4">All major credit cards, PayPal, and secure payment methods</p>
+                <p className="text-gray-300 mb-4">Credit/Debit cards, UPI, Net Banking & Wallets</p>
               </div>
               
               {/* Money Back Guarantee */}
@@ -505,21 +505,27 @@ export default function HomePage() {
             </div>
             
             {/* Payment Logos */}
-            <div className="flex justify-center items-center gap-8 opacity-70">
-              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
-                <span className="text-white font-bold">Visa</span>
+            <div className="flex justify-center items-center gap-6 opacity-70 flex-wrap">
+              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">UPI</span>
               </div>
-              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
-                <span className="text-white font-bold">Mastercard</span>
+              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">Paytm</span>
               </div>
-              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
-                <span className="text-white font-bold">PayPal</span>
+              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">PhonePe</span>
               </div>
-              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
-                <span className="text-white font-bold">Stripe</span>
+              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">Google Pay</span>
               </div>
-              <div className="bg-white/10 px-6 py-3 rounded-lg backdrop-blur-sm">
-                <span className="text-white font-bold">Google Pay</span>
+              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">Visa</span>
+              </div>
+              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">Mastercard</span>
+              </div>
+              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">RuPay</span>
               </div>
             </div>
           </Container>

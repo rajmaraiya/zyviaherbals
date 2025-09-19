@@ -66,14 +66,14 @@ export default function ContactPageClient() {
     {
       icon: Phone,
       title: "Phone Support",
-      content: "+916265926623",
+      content: "+91 6265-926-623",
       description: "Speak with our wellness team",
     },
     {
       icon: Clock,
       title: "Support Hours",
-      content: "Mon-Fri: 9AM-6PM PST",
-      description: "Weekend: 10AM-4PM PST",
+      content: "Mon-Fri: 9AM-6PM IST",
+      description: "Weekend: 10AM-4PM IST",
     },
     {
       icon: MapPin,

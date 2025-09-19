@@ -57,7 +57,7 @@ export function HomepageReviews({ className }: HomepageReviewsProps) {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleDateString('en-IN', {
       year: 'numeric',
       month: 'long'
     })
@@ -136,10 +136,10 @@ export function HomepageReviews({ className }: HomepageReviewsProps) {
     <div className={cn("space-y-16", className)}>
       <div className="text-center">
         <h2 className="font-display text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-          Loved by Thousands Worldwide
+          Trusted Across India
         </h2>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-          Authentic reviews from verified customers who have transformed their lives with ZYVIA Herbals
+          Authentic reviews from verified Indian customers who have transformed their lives with ZYVIA Herbals
         </p>
       </div>
 
