@@ -40,7 +40,7 @@ async function main() {
     slug: "zyvia-shilajit-gummies",
     title: "Shilajit Gummies",
     description: "Bioavailable fulvic minerals in a clean gummy. No added sugar.",
-    price: 3315, // ₹3,315 (was $39)
+    price: 1600, // ₹1,600
     benefits: ["Energy", "Cognitive", "Mineral balance"],
     images: [{ url: "/products/zyvia-shilajit-gummies.png", alt: "Zyvia Shilajit Gummies" }],
     featured: true,
@@ -50,7 +50,7 @@ async function main() {
     slug: "zyvia-honey-sticks",
     title: "Himalayan Shilajit Honey Sticks",
     description: "Travel-friendly sticks with Himalayan honey + shilajit.",
-    price: 2465, // ₹2,465 (was $29)
+    price: 1400, // ₹1,400
     benefits: ["Sustained energy", "Pre-workout", "Travel-friendly"],
     images: [{ url: "/products/zyvia-honey-sticks.png", alt: "Zyvia Shilajit Honey Sticks" }],
     featured: true,
@@ -60,7 +60,7 @@ async function main() {
     slug: "zyvia-shilajit-resin",
     title: "Pure Shilajit Resin",
     description: "Peak potency resin with balanced trace minerals.",
-    price: 5015, // ₹5,015 (was $59)
+    price: 1799, // ₹1,799
     benefits: ["Vitality", "Mineral balance", "Recovery"],
     images: [{ url: "/products/zyvia-shilajit-resin.png", alt: "Zyvia Shilajit Resin" }],
     featured: true,

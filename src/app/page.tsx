@@ -154,7 +154,7 @@ export default function HomePage() {
               </p>
               <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-6 py-2 rounded-full font-semibold">
                 <CheckCircle className="h-5 w-5" />
-                <span>Over 10,000 Happy Customers</span>
+                <span>Over 5,000+ Happy Indians</span>
               </div>
             </div>
             
@@ -207,11 +207,11 @@ export default function HomePage() {
                     {/* Pricing with Launch Offer */}
                     <div className="mb-6">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-3xl font-bold text-slate-900">₹{(Number(product.price) * 85 * 0.85).toFixed(0)}</span>
-                        <span className="text-xl text-gray-500 line-through">₹{(Number(product.price) * 85).toFixed(0)}</span>
+                        <span className="text-3xl font-bold text-slate-900">₹{(Number(product.price) * 0.85).toFixed(0)}</span>
+                        <span className="text-xl text-gray-500 line-through">₹{Number(product.price).toLocaleString('en-IN')}</span>
                         <span className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-sm font-bold">15% OFF</span>
                       </div>
-                      <p className="text-sm text-gray-600">Launch price - was ₹{(Number(product.originalPrice || product.price) * 85).toFixed(0)}</p>
+                      <p className="text-sm text-gray-600">Launch offer - was ₹{Number(product.originalPrice || product.price).toLocaleString('en-IN')}</p>
                     </div>
 
                     {/* Large Buy Now Button */}
@@ -268,9 +268,9 @@ export default function HomePage() {
                     {/* Bundle Pricing */}
                     <div className="mb-6">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-3xl font-bold text-slate-900">₹12,749</span>
-                        <span className="text-xl text-gray-500 line-through">₹14,194</span>
-                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-sm font-bold">Save ₹1,445</span>
+                        <span className="text-3xl font-bold text-slate-900">₹4,079</span>
+                        <span className="text-xl text-gray-500 line-through">₹4,799</span>
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded-lg text-sm font-bold">Save ₹720</span>
                       </div>
                       <p className="text-sm text-gray-600">10% Bundle Discount Applied</p>
                     </div>
@@ -289,7 +289,7 @@ export default function HomePage() {
                     </Button>
                     
                     <p className="text-xs text-center text-gray-600">
-                      FREE shipping across India + 30-day guarantee
+                      FREE delivery across India + Cash on Delivery available
                     </p>
                   </div>
                 </div>
@@ -491,7 +491,7 @@ export default function HomePage() {
                   <CreditCard className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="font-bold text-xl text-white mb-2">Flexible Payment</h3>
-                <p className="text-gray-300 mb-4">Credit/Debit cards, UPI, Net Banking & Wallets</p>
+                <p className="text-gray-300 mb-4">UPI, Cards, Net Banking, Wallets & COD</p>
               </div>
               
               {/* Money Back Guarantee */}
@@ -505,27 +505,27 @@ export default function HomePage() {
             </div>
             
             {/* Payment Logos */}
-            <div className="flex justify-center items-center gap-6 opacity-70 flex-wrap">
-              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+            <div className="flex justify-center items-center gap-4 opacity-70 flex-wrap">
+              <div className="bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
                 <span className="text-white font-bold text-sm">UPI</span>
               </div>
-              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+              <div className="bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
                 <span className="text-white font-bold text-sm">Paytm</span>
               </div>
-              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+              <div className="bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
                 <span className="text-white font-bold text-sm">PhonePe</span>
               </div>
-              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
-                <span className="text-white font-bold text-sm">Google Pay</span>
+              <div className="bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">GPay</span>
               </div>
-              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+              <div className="bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
                 <span className="text-white font-bold text-sm">Visa</span>
               </div>
-              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
-                <span className="text-white font-bold text-sm">Mastercard</span>
-              </div>
-              <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+              <div className="bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
                 <span className="text-white font-bold text-sm">RuPay</span>
+              </div>
+              <div className="bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
+                <span className="text-white font-bold text-sm">COD</span>
               </div>
             </div>
           </Container>
