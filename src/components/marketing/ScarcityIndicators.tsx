@@ -16,7 +16,7 @@ export function ScarcityIndicators({ productId, variant = "hero", className }: S
   const [stockCount, setStockCount] = useState(47)
   const [viewersCount, setViewersCount] = useState(23)
   const [recentPurchases, setRecentPurchases] = useState(156)
-  const [timeLeft, setTimeLeft] = useState({ hours: 23, minutes: 47, seconds: 32 })
+  const [timeLeft, setTimeLeft] = useState({ hours: 47, minutes: 59, seconds: 45 })
 
   // Simulate real-time stock depletion
   useEffect(() => {
@@ -71,8 +71,8 @@ export function ScarcityIndicators({ productId, variant = "hero", className }: S
           minutes = 59
           seconds = 59
         } else {
-          // Reset the timer (flash sale "restarts")
-          hours = 23
+          // Reset the timer (flash sale "restarts") - 48 hour cycle
+          hours = 47
           minutes = 59
           seconds = 59
         }
@@ -246,17 +246,25 @@ export function ActivityNotifications() {
 
   const activityMessages = [
     "Priya from Mumbai just purchased Shilajit Resin",
-    "Arjun from Bangalore added 2 Honey Sticks to cart", 
-    "Sneha from Delhi just left a 5-star review",
-    "Rajesh from Pune purchased the Complete Bundle",
-    "Kavya from Hyderabad just signed up for updates",
-    "Amit from Chennai viewed this product 3 times",
-    "Nisha from Kolkata just shared on social media",
-    "Rohan from Ahmedabad purchased Shilajit Gummies",
-    "Meera from Jaipur just ordered for the second time",
-    "Vikram from Lucknow added bundle to wishlist",
-    "Ananya from Indore just recommended to friends",
-    "Karan from Surat purchased premium resin"
+    "Arjun from Bangalore just ordered Honey Sticks",
+    "Sneha from Delhi just purchased Shilajit Gummies", 
+    "Rajesh from Pune just ordered the Complete Bundle",
+    "Kavya from Hyderabad just purchased Shilajit Resin",
+    "Amit from Chennai just ordered Honey Sticks",
+    "Nisha from Kolkata just purchased Shilajit Gummies",
+    "Rohan from Ahmedabad just ordered the bundle",
+    "Meera from Jaipur just purchased Shilajit Resin",
+    "Vikram from Lucknow just ordered Honey Sticks",
+    "Ananya from Indore just purchased Shilajit Gummies",
+    "Karan from Surat just ordered Shilajit Resin",
+    "Deepika from Nagpur just purchased the bundle",
+    "Ravi from Chandigarh just ordered Honey Sticks",
+    "Pooja from Vadodara just purchased Shilajit Gummies",
+    "Siddharth from Agra just ordered Shilajit Resin",
+    "Ishita from Nashik just purchased Honey Sticks",
+    "Manoj from Kanpur just ordered the Complete Bundle",
+    "Shruti from Coimbatore just purchased Shilajit Resin",
+    "Rahul from Patna just ordered Shilajit Gummies"
   ]
 
   useEffect(() => {
